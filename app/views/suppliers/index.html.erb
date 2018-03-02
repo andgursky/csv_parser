@@ -1,0 +1,17 @@
+<h1>Listing suppliers</h1>
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @suppliers.each do |supplier| %>
+      <tr>
+        <td><%= supplier.supplier_id %></td>
+        <td><%= supplier.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

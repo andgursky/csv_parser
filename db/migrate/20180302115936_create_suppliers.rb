@@ -6,6 +6,6 @@ class CreateSuppliers < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
-    #execute "ALTER TABLE suppliers ADD PRIMARY KEY (supplier_id);"
+    # execute "ALTER TABLE suppliers ADD PRIMARY KEY (supplier_id);"
   end
 end

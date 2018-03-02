@@ -12,6 +12,6 @@ class CreateProducts < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
-    #execute "ALTER TABLE products ADD PRIMARY KEY (sku);"
+    # execute "ALTER TABLE products ADD PRIMARY KEY (sku);"
   end
 end
