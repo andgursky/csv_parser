@@ -1,0 +1,81 @@
+/c;
+\c;
+c\
+select * from pg_catalog.pg_tables;
+select * from pg_catalog.pg_tables;
+\l
+\c iis_batch_development;
+select * from pg_catalog.pg_tables;
+ALTER TABLE "monitorings" ALTER COLUMN "period" TYPE integer;
+ALTER TABLE "monitorings" ALTER COLUMN "period" TYPE integer USING period::integer;
+ALTER TABLE monitoring ALTER COLUMN period;
+ALTER TABLE monitoring DROP COLUMN period;
+ALTER TABLE monitorings DROP COLUMN period;
+ALTER TABLE monitorings ADD COLUMN period integer;
+select * from monitoring;
+select * from monitorings;
+select colump_name, data_type
+from information_schema.columns
+where table_catalog = 'sandbox'
+and table_schema = 'public'
+and table_name = 'test';
+select column_name, data_type
+from information_schema.columns
+where table_catalog = 'sandbox'
+and table_schema = 'public'
+and table_name = 'test';
+select column_name, data_type
+from information_schema.columns
+where table_catalog = 'sandbox'
+and table_schema = 'public'
+and table_name = 'monitoring';
+select column_name, data_type
+from information_schema.columns;
+q
+;
+quit;
+exit
+;
+\q
+\l;
+\c;
+\l
+\c iis_batch_development;
+\q;
+\q
+\du
+q
+quit
+\q
+\list
+select pg_database_size('iis_batch_development')
+;
+select pg_database_size('iis_batch_development');
+\l+ iis_batch_development
+\l+ iis_batch_development
+\l+ iis_batch_development
+\l+ iis_batch_development
+\l+ iis_batch_development
+exit
+Q
+\q
+\l
+\l+ iis_batch_development
+\q
+\c
+\s
+\s
+select pg_database_size('iis_development')
+\s
+select pg_database_size('iis_batch_development')
+;
+select pg_database_size('iis_batch_development');
+\l
+\c iis_batch_development
+\l
+\list
+\dt
+\q
+\s
+\l
+\s csv_parser_development
