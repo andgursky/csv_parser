@@ -2,7 +2,7 @@ class SuppliersController < ApplicationController
   before_action :set_supplier, only: %i[show download]
 
   def index
-    @suppliers = Supplier.all
+    @suppliers = Supplier.paginate(page: params['page'])
   end
 
   def create

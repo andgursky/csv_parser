@@ -37,6 +37,7 @@ gem 'resque-status'
 gem 'resque-web', require: 'resque_web'
 gem 'resque-scheduler'
 gem 'foreman'
+gem 'will_paginate'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
