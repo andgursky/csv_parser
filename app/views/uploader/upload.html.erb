@@ -1,6 +1,6 @@
-<h1>Uploader#upload</h1>
-<p>Find me in app/views/uploader/upload.html.erb</p>
+<h1>Upload .csv file</h1>
+<br>
 <%= form_tag({ action: :upload }, multipart: true) do %>
   <%= file_field_tag 'file' %>
-  <%= submit_tag %>
+  <%= submit_tag "Upload" %>
 <% end %>
