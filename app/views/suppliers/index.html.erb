@@ -32,3 +32,5 @@
 <%= will_paginate @suppliers %>
 <br>
 <%= button_to "Create supplier", new_supplier_path, method: :get %>
+<br>
+<%= button_to "Upload csv data", uploader_path, form: { style: 'display:inline-block;' } %>
