@@ -1,0 +1,26 @@
+<h1>Supplier info</h1>
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @supplier.supplier_id %></td>
+      <td><%= @supplier.name %></td>
+      <td><%= link_to "edit", controller: :suppliers, action: :edit,
+        id: @supplier %></td>
+      <td>|</td>
+      <td><%= link_to "add product", @supplier, method: :post %></td>
+      <td>|</td>
+      <% unless @supplier.products.empty? %>
+        <td><%= link_to "products", controller: "products", action: "show",
+          id: @supplier %></td>
+        <td>|</td>
+      <% end %>
+      </tr>
+    </tr>
+  </tbody>
+</table>

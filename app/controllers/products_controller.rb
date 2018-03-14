@@ -1,8 +1,14 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: %i[show download]
+
+  def new
+    @product = Product.new
+  end
 
   def create
     binding.pry
+  end
+
+  def edit
   end
 
   def update
@@ -10,7 +16,8 @@ class ProductsController < ApplicationController
   end
 
   def show
-    binding.pry
+    @supplier_products = Supplier.find(params['id']).products.
+      paginate(page: params['page'])
   end
 
   def index
@@ -26,9 +33,5 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:sku, :supplier_id, :fild1, :fild2,
                                     :fild3, :fild4, :fild5, :fild6, :price)
-  end
-
-  def set_product
-    @product = Product.find params['id']
   end
 end

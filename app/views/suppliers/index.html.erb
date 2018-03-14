@@ -11,9 +11,24 @@
       <tr>
         <td><%= supplier.supplier_id %></td>
         <td><%= supplier.name %></td>
+        <td><%= link_to "show", controller: :suppliers, action: :show,
+          id: supplier %></td>
+        <td>|</td>
+        <td><%= link_to "edit", controller: :suppliers, action: :edit,
+          id: supplier %></td>
+        <td>|</td>
+        <td><%= link_to "add product", supplier, method: :post %></td>
+        <td>|</td>
+        <% unless supplier.products.empty? %>
+          <td><%= link_to "products", controller: "products", action: "show",
+            id: supplier %></td>
+          <td>|</td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 <br>
 <%= will_paginate @suppliers %>
+<br>
+<%= button_to "Create supplier", new_supplier_path, method: :get %>

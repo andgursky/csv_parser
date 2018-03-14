@@ -1,2 +1,33 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<h1>Supplier <%= @supplier_products.first.supplier_id %> Products</h1>
+<table>
+  <thead>
+    <tr>
+      <th>scu</th>
+      <th>supplier</th>
+      <th>field1</th>
+      <th>field2</th>
+      <th>field3</th>
+      <th>field4</th>
+      <th>field5</th>
+      <th>field6</th>
+      <th>price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @supplier_products.each do |product| %>
+      <tr>
+        <td><%= product.sku %></td>
+        <td><%= product.supplier_id %></td>
+        <td><%= product.field1 %></td>
+        <td><%= product.field2 %></td>
+        <td><%= product.field3 %></td>
+        <td><%= product.field4 %></td>
+        <td><%= product.field5 %></td>
+        <td><%= product.field6 %></td>
+        <td><%= product.price %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= will_paginate @supplier_products %>
