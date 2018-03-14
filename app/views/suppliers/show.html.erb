@@ -16,7 +16,7 @@
       <td><%= link_to "add product", @supplier, method: :post %></td>
       <td>|</td>
       <% unless @supplier.products.empty? %>
-        <td><%= link_to "products", controller: "products", action: "show",
+        <td><%= link_to "products", controller: :suppliers, action: :products,
           id: @supplier %></td>
         <td>|</td>
       <% end %>

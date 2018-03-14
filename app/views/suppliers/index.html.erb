@@ -17,10 +17,10 @@
         <td><%= link_to "edit", controller: :suppliers, action: :edit,
           id: supplier %></td>
         <td>|</td>
-        <td><%= link_to "add product", supplier, method: :post %></td>
+        <td><%= link_to "add product", controller: :products, action: :new, product: { supplier_id: supplier} %></td>
         <td>|</td>
         <% unless supplier.products.empty? %>
-          <td><%= link_to "products", controller: "products", action: "show",
+          <td><%= link_to "products", controller: :suppliers, action: :products,
             id: supplier %></td>
           <td>|</td>
         <% end %>

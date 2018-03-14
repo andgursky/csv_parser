@@ -1,5 +1,5 @@
 class SuppliersController < ApplicationController
-  before_action :set_supplier, only: %i[show edit update]
+  before_action :set_supplier, only: %i[show edit update products]
 
   def index
     @suppliers = Supplier.order(:id).paginate(page: params['page'])
@@ -19,6 +19,11 @@ class SuppliersController < ApplicationController
   def update
     @supplier.update_attributes(supplier_params)
     redirect_to suppliers_path
+  end
+
+  def products
+    @supplier_products = Supplier.find(params['id']).products.order(:sku).
+      paginate(page: params['page'])
   end
 
   private

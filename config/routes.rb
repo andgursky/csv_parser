@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   root to: 'suppliers#index'
 
   resources :products
-  resources :suppliers
+  resources :suppliers do
+    member do
+      get '/products', action: :products
+    end
+  end
 
   mount ResqueWeb::Engine => '/resque'
 

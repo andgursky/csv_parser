@@ -1,4 +1,4 @@
-<h1>Supplier <%= @supplier_products.first.supplier_id %> Products</h1>
+<h1>Product <%= @product.sku %> info</h1>
 <table>
   <thead>
     <tr>
@@ -14,20 +14,18 @@
     </tr>
   </thead>
   <tbody>
-    <% @supplier_products.each do |product| %>
-      <tr>
-        <td><%= product.sku %></td>
-        <td><%= product.supplier_id %></td>
-        <td><%= product.field1 %></td>
-        <td><%= product.field2 %></td>
-        <td><%= product.field3 %></td>
-        <td><%= product.field4 %></td>
-        <td><%= product.field5 %></td>
-        <td><%= product.field6 %></td>
-        <td><%= product.price %></td>
-      </tr>
-    <% end %>
+    <tr>
+      <td><%= @product.sku %></td>
+      <td><%= @product.supplier_id %></td>
+      <td><%= @product.field1 %></td>
+      <td><%= @product.field2 %></td>
+      <td><%= @product.field3 %></td>
+      <td><%= @product.field4 %></td>
+      <td><%= @product.field5 %></td>
+      <td><%= @product.field6 %></td>
+      <td><%= @product.price %></td>
+      <td><%= link_to "edit", controller: :products, action: :edit, product: { sku: @product } %></td>
+    </tr>
   </tbody>
 </table>
 <br>
-<%= will_paginate @supplier_products %>
