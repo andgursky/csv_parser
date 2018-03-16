@@ -5,7 +5,7 @@ class UploadJob
     file = options['csv_file']
     file_name = options['file_name']
     file.map do |i|
-      match_data = i.first.match(uploaded_file_regexp(file_name))
+      match_data = match_string(i.first, file_name)
       data_hash = match_data.names.map { |name| [name, match_data[name]] }.to_h
       case file_name
       when "suppliers.csv"
@@ -37,5 +37,9 @@ class UploadJob
       "sku.csv" => /(?<sku>.+?)¦(?<supplier_id>.+?)¦(?<field1>.+?)¦
     (?<field2>.+?)¦(?<field3>.+?)¦(?<field4>.+?)¦(?<field5>.+?)¦
     (?<field6>.+?)¦(?<price>.+?)$/x }[type]
+  end
+
+  def match_string(str, file_name)
+    str.match(uploaded_file_regexp(file_name))
   end
 end
